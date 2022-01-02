@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'images_table/icons/favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_table/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts_table/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_table/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_table/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor_table/perfect-scrollbar/perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css_table/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css_table/main.css' %}">
+<!--===============================================================================================-->
+<style>
+
+</style>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<li class="nav-item d-none d-sm-inline-block">
+						<p style="margin-left: 0px; margin-bottom: 15px; color: white;" class="nav-link">Total Area : &nbsp;{{total_area}}&nbsp;Acre</p>
+					  </li>
+				
+					<li class="nav-item d-none d-sm-inline-block">
+						<p style="margin-left: 600px; margin-bottom: 15px; color: white;" class="nav-link">Total Production : &nbsp;{{total_production}}&nbsp;Quintal </p>
+					  </li>
+					
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">Crop name</th>
+								<th class="column2">State name</th>
+								<th class="column3">District name</th>
+								<th class="column4">Season</th>
+								<th class="column5">Crop year</th>
+								<th class="column6">Area(In Acre)</th>
+								<th class="column6">Production(In Quintal)</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							{% for cropname,statename,districtname,seasonname,cropyear,area,production in display_list %}
+							
+								<tr>
+									<td class="column1">{{cropname}}</td>
+									<td class="column2">{{statename}}</td>
+									<td class="column3">{{districtname}}</td>
+									<td class="column4">{{seasonname}}</td>
+									<td class="column5">{{cropyear}}</td>
+									<td class="column6">{{area}}</td>
+									<td class="column6">{{production}}</td>
+								</tr>
+							{% endfor %}	
+						</tbody>
+						
+					</table>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	
+
+<!--===============================================================================================-->	
+	<script src="{% static 'vendor_table/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor_table/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor_table/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor_table/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js_table/main.js' %}"></script>
+
+</body>
+</html>
